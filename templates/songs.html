@@ -1,6 +1,6 @@
 {% extends "home-base.html" %}
 
-{% block head%}
+{% block head %}
 {{super()}}
 <style>
 h1{
@@ -12,17 +12,19 @@ h1{
 {% endblock %}
 
 
-{%block title%}
+{% block title %}
 Songs
 {% endblock %}
 
 {% block page_content %}
     <h1>this is songs:</h1>
+    <ul>
     {% for song in songs %}
       {{song}}
-      <ul>
+
         <li>{{song}}</li>
-      </ul>
+
     {% endfor %}
     <img src="{{ url_for('static',filename='img/pep.png')}}" alt="">
-    {% endblock%}
+    </ul>
+    {% endblock %}
