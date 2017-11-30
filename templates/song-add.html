@@ -10,11 +10,31 @@ Add Aritists
 <form action="/song/add" method="post">
   <label>Song name</label>
 <input type="text" name="name" value=""><br><br>
+<!--下拉 -->
 <label>Song year</label>
-<input type="text" name="year" value=""><br><br>
+<select>
+  {% for i in range(1950,2025) %}
+    {% if i ==2017 %}
+      <option selected="selected">{{i}}</option>  <!--默认2017-->
+    {% else %}
+  <option>{{i}}</option>
+  {% endif %}
+  {% endfor %}
+
+  <!--<option>2007</option>
+  <option>2008</option> -->
+</select>
 <label>lyrics</label>
 <input type="text" name="lyrics" value=""><br><br>
 <label>Artist Name</label>
+<select name="artist_name">
+  {% for artist in artists%}
+    <option>{{artist.name}}</option>
+  {% endfor%}
+
+</select>
+
 <input type="submit" name="" value="Add Song">
+
 </form>
 {% endblock%}
